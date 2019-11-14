@@ -1,0 +1,1 @@
+Pull, run composer, create database 'cupcake', migrations
