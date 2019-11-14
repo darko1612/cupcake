@@ -11,15 +11,13 @@
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('home');
-});
-Route::get('/o_meni', function () {
-    return view('o_meni');
-});
-Route::get('/proizvodi', function () {
-    return view('proizvodi');
-});
-Route::get('/kontakt', function () {
-    return view('kontakt');
-});
+});*/
+Route::resource('page', 'PageController');
+Route::post('page/store', 'PageController@store');
+
+Route::get('/', 'UserPageController@index');
+Route::get('/{title}', 'UserPageController@show');
+
+

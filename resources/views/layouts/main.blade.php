@@ -40,20 +40,14 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav mx-auto">
-                <li class="nav-item px-lg-4 {{Request::path() === '/' ? 'active' : ''}}">
-                    <a class="nav-link text-uppercase text-expanded" href="/">Pocetna
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item px-lg-4 {{Request::path() === 'o_meni' ? 'active' : ''}}">
-                    <a class="nav-link text-uppercase text-expanded" href="/o_meni">O meni</a>
-                </li>
-                <li class="nav-item px-lg-4  {{Request::path() === 'proizvodi' ? 'active' : ''}}">
-                    <a class="nav-link text-uppercase text-expanded" href="/proizvodi">Proizvodi</a>
-                </li>
-                <li class="nav-item px-lg-4 {{Request::path() === 'kontakt' ? 'active' : ''}}">
-                    <a class="nav-link text-uppercase text-expanded" href="/kontakt">Kontakt</a>
-                </li>
+                @foreach($pages as $page)
+                    <li class="nav-item px-lg-4 {{Request::path() === '/' ? 'active' : ''}}">
+                        <a class="nav-link text-uppercase text-expanded" href="{{$page->title}}">{{$page->title}}
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    @endforeach
+
             </ul>
         </div>
     </div>
