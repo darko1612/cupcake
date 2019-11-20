@@ -5,7 +5,7 @@
 
 Izaberi templejt <br>
 
-<iframe src="/" height="600" width="1200"></iframe>
+{{--<iframe src="/" height="600" width="1200"></iframe>--}}
 
 
 

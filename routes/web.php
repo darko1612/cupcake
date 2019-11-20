@@ -14,8 +14,8 @@
 /*Route::get('/', function () {
     return view('home');
 });*/
-Route::resource('page', 'PageController');
-Route::post('page/store', 'PageController@store');
+Route::resource('admin', 'AdminController');
+Route::post('admin/store', 'AdminController@store');
 
 Route::get('/', 'UserPageController@index');
 Route::get('/{title}', 'UserPageController@show');

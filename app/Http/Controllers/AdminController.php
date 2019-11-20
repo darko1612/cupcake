@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Page;
 use Illuminate\Http\Request;
 
-class PageController extends Controller
+class AdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class PageController extends Controller
      */
     public function index(Page $page)
     {
-        $pages = Page::all()->sortBy('position', 1);
+        $first_page = Page::all()->first();
 
-        return view('page.home', compact('pages'));
+        return view('admin.home', compact('first_page'));
     }
 
     /**
@@ -27,8 +27,9 @@ class PageController extends Controller
     public function create()
     {
         $page_count = Page::all()->count();
+        $first_page = Page::all()->first();
 
-        return view('page.create', ['page_count' => $page_count]);
+        return view('admin.create', ['page_count' => $page_count, 'first_page' => $first_page]);
     }
 
     /**
@@ -45,7 +46,7 @@ class PageController extends Controller
         $page->template = request('template');
         $page->position = request('position');
         $page->save();
-        return redirect('page');
+        return redirect('admin');
     }
 
     /**
@@ -56,7 +57,7 @@ class PageController extends Controller
      */
     public function show(Page $page)
     {
-       return view('page.show', compact('page', $page));
+       return view('admin.show', compact('page', $page));
     }
 
     /**
@@ -67,7 +68,7 @@ class PageController extends Controller
      */
     public function edit(Page $page)
     {
-        return view('page.edit', compact('page', $page));
+        return view('admin.edit', compact('page', $page));
     }
 
     /**
@@ -81,7 +82,7 @@ class PageController extends Controller
     {
         $page->title = request('title');
         $page->save();
-        return redirect('page/' . $page->id);
+        return redirect('admin/' . $page->id);
     }
 
     /**
@@ -93,6 +94,6 @@ class PageController extends Controller
     public function destroy(Page $page)
     {
        Page::find($page->id)->delete();
-       return redirect('/page');
+       return redirect('/admin');
     }
 }
