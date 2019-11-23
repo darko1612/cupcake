@@ -30,16 +30,20 @@
                 <ul class="nav">
                     <!-- Main menu -->
                     <li class="current"><a href="/admin"> Dashboard</a></li>
-                    <li><a href="{{ $first_page->title }}"> Poseti website</a></li>
+                    <li><a href="/{{ $first_page->title }}"> Poseti website</a></li>
                     <li><a href="/admin/create"> Dodaj novu stranicu</a></li>
-                    <li><a href="#">Upravljanje stranicama</a></li>
+                    <li><a href="/admin/pages/{{$first_page->title}}/edit">Upravljanje stranicama</a></li>
                     <li><a href="#"> Pomoc</a></li>
                 </ul>
             </div>
         </div>
         <div class="col-md-10">
-            <div class="content-box-large">
-                @yield('content')
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="content-box">
+                        @yield('content')
+                    </div>
+                </div>
             </div>
         </div>
     </div>

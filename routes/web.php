@@ -11,9 +11,8 @@
 |
 */
 
-/*Route::get('/', function () {
-    return view('home');
-});*/
+
+Route::resource('admin/pages', 'AdminPageController');
 Route::resource('admin', 'AdminController');
 Route::post('admin/store', 'AdminController@store');
 

@@ -28,8 +28,14 @@ class AdminController extends Controller
     {
         $page_count = Page::all()->count();
         $first_page = Page::all()->first();
+        $options = [
+            0 => ['value' => '/home', 'title' => 'Templejt 1'],
+            1 => ['value' => '/kontakt', 'title' => 'Templejt 2'],
+            2 => ['value' => '/o_meni', 'title' => 'Templejt 3'],
+            3 => ['value' => '/proizvodi', 'title' => 'Templejt 4'],
+        ];
 
-        return view('admin.create', ['page_count' => $page_count, 'first_page' => $first_page]);
+        return view('admin.create', ['page_count' => $page_count, 'first_page' => $first_page, 'options'=> $options]);
     }
 
     /**

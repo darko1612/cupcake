@@ -18,7 +18,7 @@ class UserPageController extends Controller
         $page = Page::all()->first();
         $pages = Page::all()->sortBy('position', 1);
 
-        return view($page->template, ['pages' => $pages]);
+        return view('templates/' . $page->template, ['pages' => $pages]);
     }
 
     /**
@@ -53,7 +53,7 @@ class UserPageController extends Controller
         $page = Page::where('title', $title)->first();
         $pages = Page::all()->sortBy('position', 1);
 
-        return view($page->template, ['pages' => $pages]);
+        return view('templates/' . $page->template, ['pages' => $pages]);
     }
 
     /**
