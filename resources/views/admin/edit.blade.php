@@ -2,17 +2,16 @@
 
 @section('content')
     @include('layouts.admin_pages')
-    <div class="col-md-12">
-        <div class="content-box">
-            <form action="" class="form-inline">
+    <form action="" class="form-group" enctype="multipart/form-data">
+        <div class="col-md-12">
+            <div class="content-box">
                 @include('layouts.input')
-            </form>
+            </div>
         </div>
-    </div>
-    <div class="col-md-12">
-        <div class="content-box-large">
-
-    Mesto za editovanje sadrzaja stranice
+        <div class="col-md-12">
+            <div class="content-box-large">
+                @include('editable_templates.home')
+            </div>
         </div>
-    </div>
+    </form>
 @endsection

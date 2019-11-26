@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Business Casual - Start Bootstrap Theme</title>
+    <title>{{$page->page_title}}</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -20,18 +20,23 @@
 
     <!-- Custom styles for this template -->
     <link href="{{asset('css/business-casual.min.css')}}" rel="stylesheet">
+    <style>
+        body {
+            background-image:linear-gradient(rgba(47,23,15,.65),rgba(47,23,15,.65)),url("{{$page->background}}");background-attachment:fixed;background-position:center;background-size:cover
+        }
+    </style>
 
 </head>
 
 <body>
 
 <h1 class="site-heading text-center text-white d-none d-lg-block">
-    <span class="site-heading-upper text-primary mb-3">Manji naslov</span>
-    <span class="site-heading-lower">Veci naslov</span>
+    <span class="site-heading-upper text-primary mb-3">{{$page->pre_title}}</span>
+    <span class="site-heading-lower">{{$page->title}}</span>
 </h1>
 
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+<nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav" style="background-color:{{$page->nav_bar_color}} ">
     <div class="container">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,8 +45,8 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav mx-auto">
                 @foreach($pages as $page)
-                    <li class="nav-item px-lg-4 {{Request::path() === '/' ? 'active' : ''}}">
-                        <a class="nav-link text-uppercase text-expanded" href="{{$page->title}}">{{$page->title}}
+                    <li class="nav-item px-lg-4 {{Request::path() === $page->page_title ? 'active' : ''}}">
+                        <a class="nav-link text-uppercase text-expanded" href="{{$page->page_title}}">{{$page->page_title}}
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>

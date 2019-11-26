@@ -17,8 +17,10 @@ class UserPageController extends Controller
     {
         $page = Page::all()->first();
         $pages = Page::all()->sortBy('position', 1);
+        $page_settings = Page::all();
+//        dd($page_settings);
 
-        return view('templates/' . $page->template, ['pages' => $pages]);
+        return view('templates/' . $page->template, ['pages' => $pages, 'page' => $page]);
     }
 
     /**
@@ -50,10 +52,11 @@ class UserPageController extends Controller
      */
     public function show($title)
     {
-        $page = Page::where('title', $title)->first();
+        $page = Page::where('page_title', $title)->first();
         $pages = Page::all()->sortBy('position', 1);
-
-        return view('templates/' . $page->template, ['pages' => $pages]);
+        $background = str_replace("/public", "", $page->background);
+        $page->background = str_replace("\\", "/", $background);
+        return view('templates/' . $page->template, ['pages' => $pages, 'page' => $page]);
     }
 
     /**

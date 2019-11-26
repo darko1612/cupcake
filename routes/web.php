@@ -12,9 +12,8 @@
 */
 
 
-Route::resource('admin/pages', 'AdminPageController');
+Route::resource('admin/pages', 'PageController');
 Route::resource('admin', 'AdminController');
-Route::post('admin/store', 'AdminController@store');
 
 Route::get('/', 'UserPageController@index');
 Route::get('/{title}', 'UserPageController@show');

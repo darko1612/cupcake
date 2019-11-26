@@ -7,7 +7,15 @@
     <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- styles -->
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
-
+    <link href="{{asset('css/business-casual.min.css')}}" rel="stylesheet">
+    {{--js--}}
+    <script src="{{asset('font_and_color.js')}}"></script>
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{asset('jquery/jquery.min.js')}}"></script>
 </head>
 <body>
 <div class="header">
@@ -30,9 +38,9 @@
                 <ul class="nav">
                     <!-- Main menu -->
                     <li class="current"><a href="/admin"> Dashboard</a></li>
-                    <li><a href="/{{ $first_page->title }}"> Poseti website</a></li>
-                    <li><a href="/admin/create"> Dodaj novu stranicu</a></li>
-                    <li><a href="/admin/pages/{{$first_page->title}}/edit">Upravljanje stranicama</a></li>
+                    <li><a href="/{{ $first_page->page_title }}"> Poseti website</a></li>
+                    <li><a href="/admin/pages/create"> Dodaj novu stranicu</a></li>
+                    <li><a href="/admin/pages/{{$first_page->page_title}}/edit">Upravljanje stranicama</a></li>
                     <li><a href="#"> Pomoc</a></li>
                 </ul>
             </div>

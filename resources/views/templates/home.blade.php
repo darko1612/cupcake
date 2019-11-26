@@ -4,19 +4,17 @@
     <section class="page-section clearfix">
         <div class="container">
             <div class="intro">
-                <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{{asset('img/intro.jpg')}}" alt="">
+                <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{{asset($page->image)}}" alt="">
                 <div class="intro-text left-0 text-center bg-faded p-5 rounded">
                     <h2 class="section-heading mb-4">
-                        <span class="section-heading-upper">Recept nedelje</span>
-                        <span class="section-heading-lower">Babini ustipci :-)</span>
+                        <span class="section-heading-upper">{{$page->section1_pre_title}}</span>
+                        <span class="section-heading-lower">{{$page->section1_title}}</span>
                     </h2>
-                    <p class="mb-3">Every cup of our quality artisan coffee starts with locally sourced, hand picked
-                        ingredients. Once you try it, our coffee will be a blissful addition to your everyday morning
-                        routine - we guarantee it!
+                    <p class="mb-3">{{$page->section1_text}}
                     </p>
-                    <div class="intro-button mx-auto">
+                   {{-- <div class="intro-button mx-auto">
                         <a class="btn btn-primary btn-xl" href="#">Visit Us Today!</a>
-                    </div>
+                    </div>--}}
                 </div>
             </div>
         </div>

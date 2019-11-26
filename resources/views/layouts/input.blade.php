@@ -1,12 +1,12 @@
 @csrf
 <div class="form-group mb-2">
     <label for="title" class="mr-sm-2">Ime stranice</label>
-    <input class="form-control form-control-sm mr-sm-2" type="text" name="title" id="title"
-           value="{{$page->title ?? ''}}">
+    <input class="form-control form-control-sm mr-sm-2" type="text" name="page_title" id="title"
+           value="{{$page->title ?? ''}}" autocomplete="off">
 </div>
 <div class="form-group mb-2">
     <label for="template" class="mr-sm-2">Izaberi templejt</label>
-    <select class="form-control form-control-sm mr-sm-2" name="template" id="">
+    <select class="form-control form-control-sm mr-sm-2" name="template" id="template">
         @foreach($options as $option)
             @isset($page)
                 @if($page->template == $option['value'])
@@ -30,3 +30,4 @@
         @endfor
     </select>
 </div>
+
