@@ -39,9 +39,8 @@
                         <input type="text" name="section1_title" placeholder="Naslov">
                     </span>
                 </h2>
-                <p class="mb-3">
-                    <input type="text" name="section1_text" placeholder="Tekst">
-                </p>
+                <textarea type="text" name="section1_text" placeholder="Tekst"></textarea>
+
                 {{-- <div class="intro-button mx-auto">
                      <a class="btn btn-primary btn-xl" href="#">Visit Us Today!</a>
                  </div>--}}
@@ -55,16 +54,17 @@
         <span class="text-info">Izaberi boju sekcije</span><input name="section1_color" type="color"/>
         <div class="row">
             <div class="col-xl-9 mx-auto">
-                <div class="cta-inner text-center rounded">
+                <div class="text-center rounded" style="position: relative; padding: 3rem;margin: 0.5rem; background-color: rgba(255, 255, 255, 0.85);">
                     <h2 class="section-heading mb-4">
-                        <span class="section-heading-upper">Our Promise</span>
-                        <span class="section-heading-lower">To You</span>
+                        <span class="section-heading-upper">
+                            <input type="text" name="section2_pre_title" placeholder="Prednaslov">
+                        </span>
+                        <span class="section-heading-lower">
+                            <input type="text" name="section2_title" placeholder="Naslov">
+                        </span>
                     </h2>
-                    <p class="mb-0">When you walk into our shop to start your day, we are dedicated to providing you
-                        with friendly service, a welcoming atmosphere, and above all else, excellent products made with
-                        the highest quality ingredients. If you are not satisfied, please let us know and we will do
-                        whatever we can to make things right!</p>
-                    {{--<span class="text-info">Izaberi boju sekcije</span><input name="section2_color" type="color"/>--}}
+                    <textarea name="section2_text" id="" cols="30" rows="10">Polje za tekst</textarea>
+                    <span class="text-info">Izaberi boju sekcije</span><input name="section2_color_2" type="color"/>
                 </div>
             </div>
         </div>

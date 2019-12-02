@@ -32,9 +32,9 @@ class PageController extends Controller
 
         $options = [
             0 => ['value' => '/home', 'title' => 'Templejt 1'],
-            1 => ['value' => '/kontakt', 'title' => 'Templejt 2'],
-            2 => ['value' => '/o_meni', 'title' => 'Templejt 3'],
-            3 => ['value' => '/proizvodi', 'title' => 'Templejt 4'],
+            1 => ['value' => '/o_meni', 'title' => 'Templejt 2'],
+            2 => ['value' => '/proizvodi', 'title' => 'Templejt 3'],
+            3 => ['value' => '/kontakt', 'title' => 'Templejt 4'],
         ];
 
         return view('admin.create', ['page_count' => $page_count, 'first_page' => $first_page, 'options'=> $options, 'pages' => $pages]);
@@ -100,9 +100,9 @@ class PageController extends Controller
         $page = Page::where('page_title', $id)->first();
         $options = [
             0 => ['value' => '/home', 'title' => 'Templejt 1'],
-            1 => ['value' => '/kontakt', 'title' => 'Templejt 2'],
-            2 => ['value' => '/o_meni', 'title' => 'Templejt 3'],
-            3 => ['value' => '/proizvodi', 'title' => 'Templejt 4'],
+            1 => ['value' => '/o_meni', 'title' => 'Templejt 2'],
+            2 => ['value' => '/proizvodi', 'title' => 'Templejt 3'],
+            3 => ['value' => '/kontakt', 'title' => 'Templejt 4'],
         ];
 
         $pages = Page::all()->sortBy('position', 1);

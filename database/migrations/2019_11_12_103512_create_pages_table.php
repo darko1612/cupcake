@@ -57,6 +57,9 @@ class CreatePagesTable extends Migration
             $table->string('section2_text_color')->nullable($value = true);
             $table->string('section2_text_font')->nullable($value = true);
             $table->integer('section2_text_size')->nullable($value = true);
+            $table->string('section2_color_1')->nullable($value = true);
+            $table->string('section2_color_2')->nullable($value = true);
+
             $table->timestamps();
         });
     }

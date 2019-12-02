@@ -38,9 +38,11 @@
                 <ul class="nav">
                     <!-- Main menu -->
                     <li class="current"><a href="/admin"> Dashboard</a></li>
-                    <li><a href="/{{ $first_page->page_title }}"> Poseti website</a></li>
                     <li><a href="/admin/pages/create"> Dodaj novu stranicu</a></li>
-                    <li><a href="/admin/pages/{{$first_page->page_title}}/edit">Upravljanje stranicama</a></li>
+                    @isset($first_page->page_title)
+                        <li><a href="/{{ $first_page->page_title }}"> Poseti website</a></li>
+                        <li><a href="/admin/pages/{{$first_page->page_title }}/edit">Upravljanje stranicama</a></li>
+                    @endisset
                     <li><a href="#"> Pomoc</a></li>
                 </ul>
             </div>

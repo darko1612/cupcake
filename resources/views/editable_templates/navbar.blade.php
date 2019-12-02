@@ -6,7 +6,7 @@
             <ul class="navbar-nav mx-auto">
                 @foreach($pages as $page)
                     <li class="nav-item px-lg-4">
-                        <span class="nav-link text-uppercase text-expanded">{{$page->title}}</span>
+                        <span class="nav-link text-uppercase text-expanded">{{$page->page_title}}</span>
                     </li>
                 @endforeach
             </ul>
