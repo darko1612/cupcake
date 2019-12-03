@@ -15,7 +15,10 @@ class PageController extends Controller
      */
     public function index()
     {
-        //
+        $pages = Page::all()->sortBy('position', 1);
+        $first_page = Page::all()->first();
+
+        return view('admin.show', ['pages' => $pages, 'first_page' => $first_page]);
 
     }
 
@@ -119,7 +122,28 @@ class PageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $page = Page::where('page_title', '=', $id)->firstOrFail();
+        $page->fill($request->all());
+        if($request->hasFile('image'))
+        {
+            $image = $request->file('image');
+            $filename = $request->file('image')->hashName();
+            $path = $image->move('public/img', $filename);
+            $page->image = $path;
+
+        }
+        if($request->hasFile('background'))
+        {
+            $background = $request->file('background');
+            $filename = $request->file('background')->hashName();
+            $path = $background->move('../public/img', $filename);
+            $page->background = $path;
+
+        }
+        $page->update();
+
+        return redirect('admin/pages');
+
     }
 
     /**
@@ -130,6 +154,10 @@ class PageController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        $page = Page::where('page_title', $id)->first();
+        $page->delete();
+
+        return redirect('admin/pages');
     }
 }

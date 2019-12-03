@@ -1,4 +1,3 @@
-
 <span>
     <p style="color: #000;">Izaberi sliku za pozadinu:</p>
     <input type="file" name="background" id="background">
@@ -6,7 +5,7 @@
 <h1 class="site-heading text-center text-white d-none d-lg-block">
 
     <span class="site-heading-upper text-primary mb-3">
-        <input type="text" placeholder="Manji naslov" name="pre_title"><br>
+        <input type="text" placeholder="Manji naslov" name="pre_title" value="{{$page->pre_title ?? ''}}"><br>
 <select id="selecth1FontFamily" name="pre_title_font" onchange="updateh1family();">
     <option> Serif </option>
     <option> Arial </option>
@@ -15,12 +14,11 @@
     <option> Verdana </option>
     <option> Lucida Sans Unicode </option>
 </select>
-<input type="number" id="size" min="0" max="70" value="30" onchange="updateSize()" />
-<input type="color" onchange="updateColor()" id="color" />
+<input type="number" id="size" min="0" max="70" value="30" onchange="updateSize()"/>
+<input type="color" onchange="updateColor()" id="color"/>
     </span>
-
     <span class="site-heading-lower text-primary">
-        <input type="text" placeholder="Veci naslov" name="title"><br>
+        <input type="text" placeholder="Veci naslov" name="title" value="{{$page->title ?? ''}}"><br>
     </span>
 </h1>
 @include('editable_templates.navbar')
@@ -29,17 +27,17 @@
         <div class="intro">
             <p style="color: #000;">Izaberi sliku:</p>
             <input type="file" name="image" id="image">
-            <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{{asset('img/intro.jpg')}}" alt="">
+            <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{{--{{asset($page->image)}}--}}" alt="">
             <div class="intro-text left-0 text-center bg-faded p-5 rounded">
                 <h2 class="section-heading mb-4">
                     <span class="section-heading-upper">
-                        <input type="text" name="section1_pre_title" placeholder="Pred naslov">
+                        <input type="text" name="section1_pre_title" placeholder="Pred naslov" value="{{$page->section1_pre_title ?? ''}}">
                     </span>
                     <span class="section-heading-lower">
-                        <input type="text" name="section1_title" placeholder="Naslov">
+                        <input type="text" name="section1_title" placeholder="Naslov" value="{{$page->section1_title ?? ''}}">
                     </span>
                 </h2>
-                <textarea type="text" name="section1_text" placeholder="Tekst"></textarea>
+                <textarea type="text" name="section1_text" placeholder="Tekst">{{$page->section1_text ?? ''}}</textarea>
 
                 {{-- <div class="intro-button mx-auto">
                      <a class="btn btn-primary btn-xl" href="#">Visit Us Today!</a>
@@ -51,20 +49,21 @@
 
 <section class="page-section cta">
     <div class="container">
-        <span class="text-info">Izaberi boju sekcije</span><input name="section1_color" type="color"/>
+        <span class="text-info">Izaberi boju sekcije</span><input name="section2_color_1" type="color" value="{{--{{$page->section2_color1}}--}}">
         <div class="row">
             <div class="col-xl-9 mx-auto">
-                <div class="text-center rounded" style="position: relative; padding: 3rem;margin: 0.5rem; background-color: rgba(255, 255, 255, 0.85);">
+                <div class="text-center rounded"
+                     style="position: relative; padding: 3rem;margin: 0.5rem; background-color: rgba(255, 255, 255, 0.85);">
                     <h2 class="section-heading mb-4">
                         <span class="section-heading-upper">
-                            <input type="text" name="section2_pre_title" placeholder="Prednaslov">
+                            <input type="text" name="section2_pre_title" placeholder="Prednaslov" value="{{$page->section2_pre_title ?? ''}}">
                         </span>
                         <span class="section-heading-lower">
-                            <input type="text" name="section2_title" placeholder="Naslov">
+                            <input type="text" name="section2_title" placeholder="Naslov" value="{{$page->section2_title ?? ''}}">
                         </span>
                     </h2>
-                    <textarea name="section2_text" id="" cols="30" rows="10">Polje za tekst</textarea>
-                    <span class="text-info">Izaberi boju sekcije</span><input name="section2_color_2" type="color"/>
+                    <textarea name="section2_text" id="" cols="30" rows="10">{{$page->section2_text ?? ''}}</textarea>
+                    <span class="text-info">Izaberi boju sekcije</span><input name="section2_color_2" type="color">
                 </div>
             </div>
         </div>
