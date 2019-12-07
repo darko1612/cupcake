@@ -257,3 +257,11 @@ p {
 #pre_title {
   color: green;
 }
+
+input, select {
+  border-top-style: hidden;
+  border-right-style: groove;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+  background-color: transparent;
+}
