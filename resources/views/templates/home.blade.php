@@ -12,9 +12,6 @@
                     </h2>
                     <p class="mb-3">{{$page->section1_text}}
                     </p>
-                   {{-- <div class="intro-button mx-auto">
-                        <a class="btn btn-primary btn-xl" href="#">Visit Us Today!</a>
-                    </div>--}}
                 </div>
             </div>
         </div>

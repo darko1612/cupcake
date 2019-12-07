@@ -7,14 +7,10 @@
     <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- styles -->
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
-    <link href="{{asset('css/business-casual.min.css')}}" rel="stylesheet">
-    {{--js--}}
-    <script src="{{asset('font_and_color.js')}}"></script>
-    <!-- Custom fonts for this template -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
-          rel="stylesheet">
-    <link href="https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyAu_CAaXrRB7Tfb6Dg6QwqzGXnJv3jw0vg" rel="stylesheet">
-    <!-- Bootstrap core JavaScript -->
+    <link href="{{asset('css/business-casual.css')}}" rel="stylesheet">
+    <!-- Bootstrap core JavaScript -->--}}
+    <link href='https://fonts.googleapis.com/css?family=Montez|Lobster|Josefin+Sans|Shadows+Into+Light|Pacifico|Amatic+SC:700|Orbitron:400,900|Rokkitt|Righteous|Dancing+Script:700|Bangers|Chewy|Sigmar+One|Architects+Daughter|Abril+Fatface|Covered+By+Your+Grace|Kaushan+Script|Gloria+Hallelujah|Satisfy|Lobster+Two:700|Comfortaa:700|Cinzel|Courgette'
+          rel='stylesheet' type='text/css'>
     <script src="{{asset('jquery/jquery.min.js')}}"></script>
 </head>
 <body>
@@ -30,7 +26,6 @@
         </div>
     </div>
 </div>
-
 <div class="page-content">
     <div class="row">
         <div class="col-md-2">
@@ -41,7 +36,7 @@
                     <li><a href="/admin/pages/create"> Dodaj novu stranicu</a></li>
                     @isset($first_page->page_title)
                         <li><a href="/{{ $first_page->page_title }}"> Poseti website</a></li>
-                        <li><a href="/admin/pages">Upravljanje stranicama</a></li>
+                        <li><a href="/admin/pages"> Upravljanje stranicama</a></li>
                     @endisset
                     <li><a href="#"> Pomoc</a></li>
                 </ul>

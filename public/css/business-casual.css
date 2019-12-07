@@ -44,9 +44,9 @@ p {
 }
 
 .site-heading .site-heading-lower {
-  font-size: 5rem;
-  font-weight: 100;
-  line-height: 4rem;
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 3rem;
 }
 
 .page-section {
@@ -252,4 +252,8 @@ p {
 
 .font-weight-light {
   font-weight: 100 !important;
+}
+
+#pre_title {
+  color: green;
 }

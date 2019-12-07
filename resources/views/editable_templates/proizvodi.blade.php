@@ -1,5 +1,3 @@
-@include('editable_templates.navbar')
-
 <section class="page-section">
     <div class="container">
         <div class="product-item">

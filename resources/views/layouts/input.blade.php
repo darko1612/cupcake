@@ -1,7 +1,7 @@
 @csrf
 <div class="form-group mb-2">
     <label for="title" class="mr-sm-2">Ime stranice</label>
-    <input class="form-control form-control-sm mr-sm-2" type="text" name="page_title" id="title"
+    <input class="form-control form-control-sm mr-sm-2" type="text" name="page_title" id="page_title"
            value="{{$page->page_title ?? ''}}" autocomplete="off">
 </div>
 <div class="form-group mb-2">
