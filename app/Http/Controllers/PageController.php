@@ -19,7 +19,6 @@ class PageController extends Controller
         $first_page = Page::all()->first();
 
         return view('admin.show', ['pages' => $pages, 'first_page' => $first_page]);
-
     }
 
     /**
@@ -40,7 +39,7 @@ class PageController extends Controller
             3 => ['value' => '/kontakt', 'title' => 'Templejt 4'],
         ];
 
-        return view('admin.create', ['page_count' => $page_count, 'first_page' => $first_page, 'options'=> $options, 'pages' => $pages]);
+        return view('admin.create', ['page_count' => $page_count, 'first_page' => $first_page, 'options' => $options, 'pages' => $pages]);
     }
 
     /**
@@ -53,16 +52,14 @@ class PageController extends Controller
     {
 
         $page->fill($request->all());
-        if($request->hasFile('image'))
-        {
-           $image = $request->file('image');
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
             $filename = $request->file('image')->hashName();
             $path = $image->move('public/img', $filename);
             $page->image = $path;
 
         }
-        if($request->hasFile('background'))
-        {
+        if ($request->hasFile('background')) {
             $background = $request->file('background');
             $filename = $request->file('background')->hashName();
             $path = $background->move('../public/img', $filename);
@@ -100,7 +97,7 @@ class PageController extends Controller
     {
         $first_page = Page::all()->first();
         $page_count = Page::all()->count();
-        $page = Page::where('page_title', $id)->first();
+        $page = Page::where('page_title', str_replace("_", " ", $id))->first();
         $options = [
             0 => ['value' => '/home', 'title' => 'Templejt 1'],
             1 => ['value' => '/o_meni', 'title' => 'Templejt 2'],
@@ -124,16 +121,14 @@ class PageController extends Controller
     {
         $page = Page::where('page_title', '=', $id)->firstOrFail();
         $page->fill($request->all());
-        if($request->hasFile('image'))
-        {
+        if ($request->hasFile('image')) {
             $image = $request->file('image');
             $filename = $request->file('image')->hashName();
             $path = $image->move('public/img', $filename);
             $page->image = $path;
 
         }
-        if($request->hasFile('background'))
-        {
+        if ($request->hasFile('background')) {
             $background = $request->file('background');
             $filename = $request->file('background')->hashName();
             $path = $background->move('../public/img', $filename);

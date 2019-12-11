@@ -15,7 +15,6 @@
             </div>
         </div>
     </form>
-
     <script>
         $(document).ready(function () {
             $('#template').on('change', function () {

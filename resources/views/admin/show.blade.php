@@ -5,7 +5,7 @@
 
 <ul>
     @foreach($pages as $page)
-    <li>{{$page->page_title}} <a href="/admin/pages/{{$page->page_title}}/edit" class="btn btn-sm btn-info">Izmeni stranicu</a>
+    <li>{{$page->page_title}}<a href="/admin/pages/{{$page_titles[$loop->index]}}/edit" class="btn btn-sm btn-info">Izmeni stranicu</a>
         <form action="/admin/pages/{{$page->page_title}}" method="POST">
             @csrf
             @method('DELETE')

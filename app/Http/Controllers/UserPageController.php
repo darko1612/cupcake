@@ -13,12 +13,10 @@ class UserPageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $page = Page::all()->first();
         $pages = Page::all()->sortBy('position', 1);
-        $page_settings = Page::all();
-//        dd($page_settings);
 
         return view('templates/' . $page->template, ['pages' => $pages, 'page' => $page]);
     }
@@ -36,7 +34,7 @@ class UserPageController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -47,22 +45,24 @@ class UserPageController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\UserPage  $userPage
+     * @param  \App\UserPage $userPage
      * @return \Illuminate\Http\Response
      */
     public function show($title)
     {
+        $title = str_replace("_", " ", $title);
         $page = Page::where('page_title', $title)->first();
         $pages = Page::all()->sortBy('position', 1);
-        $background = str_replace("/public", "", $page->background);
+        $background = str_replace("/public", " ", $page->background);
         $page->background = str_replace("\\", "/", $background);
+
         return view('templates/' . $page->template, ['pages' => $pages, 'page' => $page]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\UserPage  $userPage
+     * @param  \App\UserPage $userPage
      * @return \Illuminate\Http\Response
      */
     public function edit(UserPage $userPage)
@@ -73,8 +73,8 @@ class UserPageController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\UserPage  $userPage
+     * @param  \Illuminate\Http\Request $request
+     * @param  \App\UserPage $userPage
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, UserPage $userPage)
@@ -85,7 +85,7 @@ class UserPageController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\UserPage  $userPage
+     * @param  \App\UserPage $userPage
      * @return \Illuminate\Http\Response
      */
     public function destroy(UserPage $userPage)

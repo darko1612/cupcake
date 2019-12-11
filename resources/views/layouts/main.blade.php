@@ -46,7 +46,7 @@
             <ul class="navbar-nav mx-auto">
                 @foreach($pages as $page)
                     <li class="nav-item px-lg-4 {{Request::path() === $page->page_title ? 'active' : ''}}">
-                        <a class="nav-link text-uppercase text-expanded" href="{{$page->page_title}}">{{$page->page_title}}
+                        <a class="nav-link text-uppercase text-expanded" href="{{$page_titles[$loop->index]}}">{{$page->page_title}}
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
